@@ -2,33 +2,25 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Aetheris. — Indra Setiawan | Gamer Manokwari</title>
 
   <meta name="description"
-        content="Profil Aetheris., gaming username Indra Setiawan dari Manokwari, Papua Barat. All Role, Immortal, Instagram dan TikTok.">
+    content="Profil gaming Aetheris. — Indra Setiawan dari Manokwari, Papua Barat. All Role, Immortal, Instagram dan TikTok.">
 
   <meta name="author" content="Indra Setiawan">
-
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#05070d">
 
-  <meta name="theme-color" content="#050505">
-
-  <!-- Google Search Console -->
   <meta name="google-site-verification"
-        content="0VCAO_KMW--3Q5mo2yEhQxXQvFzOEFSWfLJz0ajdwhQ">
+    content="0VCAO_KMW--3Q5mo2yEhQxXQvFzOEFSWfLJz0ajdwhQ">
 
   <!-- Open Graph -->
-  <meta property="og:title"
-        content="Aetheris. — Indra Setiawan">
-
+  <meta property="og:title" content="Aetheris. — Indra Setiawan">
   <meta property="og:description"
-        content="Profil gaming Aetheris. dari Manokwari, Papua Barat.">
-
+    content="Gaming profile of Aetheris. from Manokwari, Papua Barat.">
   <meta property="og:type" content="website">
-
   <meta property="og:locale" content="id_ID">
 
   <!-- Structured Data -->
@@ -58,6 +50,8 @@
   </script>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -69,169 +63,270 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Orbitron', Arial, sans-serif;
       background:
-        radial-gradient(circle at top, #151515 0%, #070707 45%, #000 100%);
+        radial-gradient(circle at 50% -10%, #102b45 0%, transparent 40%),
+        linear-gradient(135deg, #020306, #05080e 55%, #010204);
       color: #fff;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
+    /* Gaming grid */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(
-          rgba(255,255,255,0.02) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,0.02) 1px,
-          transparent 1px
-        );
-      background-size: 40px 40px;
+        linear-gradient(rgba(80,180,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80,180,255,.035) 1px, transparent 1px);
+      background-size: 45px 45px;
       mask-image: linear-gradient(to bottom, black, transparent);
+      z-index: 0;
+    }
+
+    /* Scanline */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,.012) 4px
+      );
+      z-index: 10;
     }
 
     .container {
+      position: relative;
+      z-index: 2;
       width: min(900px, 92%);
       margin: auto;
-      padding: 70px 0;
+      padding: 55px 0;
     }
 
+    /* HERO */
     .hero {
+      position: relative;
+      padding: 75px 25px;
       text-align: center;
-      padding: 70px 20px;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      background: rgba(255,255,255,0.025);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 20px 70px rgba(0,0,0,0.45);
+      background: rgba(5, 10, 18, .82);
+      border: 1px solid rgba(75, 181, 255, .22);
+      clip-path: polygon(
+        0 18px,
+        18px 0,
+        calc(100% - 18px) 0,
+        100% 18px,
+        100% calc(100% - 18px),
+        calc(100% - 18px) 100%,
+        18px 100%,
+        0 calc(100% - 18px)
+      );
+      box-shadow:
+        0 0 35px rgba(0, 140, 255, .08),
+        inset 0 0 35px rgba(0, 140, 255, .025);
     }
 
-    .tag {
-      display: inline-block;
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: #999;
-      margin-bottom: 22px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 15%;
+      width: 70%;
+      height: 1px;
+      background: #5bc0ff;
+      box-shadow: 0 0 15px #5bc0ff;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      margin-bottom: 25px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #79d1ff;
+      border: 1px solid rgba(80,190,255,.3);
+      background: rgba(30,120,180,.08);
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #5bc0ff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #5bc0ff;
     }
 
     h1 {
-      font-size: clamp(42px, 10vw, 82px);
-      letter-spacing: -3px;
-      font-weight: 800;
+      font-size: clamp(45px, 10vw, 88px);
+      letter-spacing: -4px;
       line-height: 1;
-      margin-bottom: 18px;
+      font-weight: 800;
+      text-shadow:
+        0 0 10px rgba(70,180,255,.35),
+        0 0 35px rgba(0,130,255,.18);
     }
 
-    .hero p {
-      color: #aaa;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .location {
-      margin-top: 12px;
-      color: #777;
-      font-size: 14px;
-    }
-
-    section {
-      margin-top: 25px;
-      padding: 32px;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.025);
-    }
-
-    h2 {
-      font-size: 18px;
-      margin-bottom: 24px;
+    .subtitle {
+      margin-top: 20px;
+      color: #8794a3;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
       letter-spacing: 1px;
     }
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+    .location {
+      margin-top: 10px;
+      color: #536170;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
     }
 
-    .info {
-      padding: 20px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.05);
+    /* Sections */
+    section {
+      position: relative;
+      margin-top: 22px;
+      padding: 30px;
+      background: rgba(5, 10, 17, .75);
+      border: 1px solid rgba(255,255,255,.07);
+      box-shadow: inset 0 0 30px rgba(0,100,180,.025);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 3px;
+      height: 18px;
+      background: #58c7ff;
+      box-shadow: 0 0 10px #58c7ff;
+    }
+
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      position: relative;
+      padding: 22px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.06);
+      overflow: hidden;
+      transition: .25s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-3px);
+      border-color: rgba(80,190,255,.35);
+      box-shadow: 0 0 25px rgba(0,150,255,.08);
+    }
+
+    .stat::after {
+      content: "";
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      width: 60px;
+      height: 60px;
+      border: 1px solid rgba(80,190,255,.12);
+      transform: rotate(45deg);
     }
 
     .label {
       display: block;
-      color: #777;
-      font-size: 12px;
-      text-transform: uppercase;
+      color: #526170;
+      font-size: 9px;
       letter-spacing: 2px;
-      margin-bottom: 8px;
+      margin-bottom: 9px;
     }
 
     .value {
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
     }
 
+    .rank {
+      color: #69caff;
+      text-shadow: 0 0 12px rgba(80,190,255,.45);
+    }
+
+    /* About */
+    .about {
+      color: #8995a2;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* Links */
     .links {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
 
     .link {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      text-decoration: none;
-      color: #fff;
       padding: 18px 20px;
-      border-radius: 15px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: 0.25s ease;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.06);
+      transition: .25s ease;
     }
 
     .link:hover {
-      transform: translateY(-2px);
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.15);
+      padding-left: 25px;
+      border-color: rgba(80,190,255,.4);
+      background: rgba(50,150,220,.05);
     }
 
-    .arrow {
-      color: #777;
-    }
-
-    .about {
-      color: #aaa;
-      line-height: 1.8;
-      font-size: 15px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 35px 10px 10px;
-      color: #555;
+    .link span:first-child {
       font-size: 12px;
     }
 
+    .arrow {
+      color: #58c7ff;
+      font-size: 18px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 35px 0 5px;
+      text-align: center;
+      color: #39434d;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* Mobile */
     @media (max-width: 600px) {
 
       .container {
+        width: 94%;
         padding: 30px 0;
       }
 
       .hero {
-        padding: 55px 18px;
-        border-radius: 22px;
+        padding: 60px 18px;
       }
 
       h1 {
@@ -239,10 +334,10 @@
       }
 
       section {
-        padding: 24px;
+        padding: 23px;
       }
 
-      .info-grid {
+      .stats {
         grid-template-columns: 1fr;
       }
     }
@@ -256,17 +351,20 @@
     <!-- HERO -->
     <header class="hero">
 
-      <span class="tag">GAMER PROFILE</span>
+      <div class="status">
+        <span class="dot"></span>
+        GAMER PROFILE
+      </div>
 
       <h1>Aetheris.</h1>
 
-      <p>
-        Gaming username of Indra Setiawan
+      <p class="subtitle">
+        Indra Setiawan
       </p>
 
-      <div class="location">
-        Manokwari, Papua Barat, Indonesia
-      </div>
+      <p class="location">
+        Manokwari · Papua Barat · Indonesia
+      </p>
 
     </header>
 
@@ -274,28 +372,28 @@
     <!-- PROFILE -->
     <section>
 
-      <h2>Profile</h2>
+      <h2 class="section-title">PLAYER PROFILE</h2>
 
-      <div class="info-grid">
+      <div class="stats">
 
-        <div class="info">
-          <span class="label">Name</span>
+        <div class="stat">
+          <span class="label">REAL NAME</span>
           <span class="value">Indra Setiawan</span>
         </div>
 
-        <div class="info">
-          <span class="label">Username</span>
+        <div class="stat">
+          <span class="label">USERNAME</span>
           <span class="value">Aetheris.</span>
         </div>
 
-        <div class="info">
-          <span class="label">Role</span>
+        <div class="stat">
+          <span class="label">ROLE</span>
           <span class="value">All Role</span>
         </div>
 
-        <div class="info">
-          <span class="label">Rank</span>
-          <span class="value">Immortal</span>
+        <div class="stat">
+          <span class="label">RANK</span>
+          <span class="value rank">Immortal</span>
         </div>
 
       </div>
@@ -306,12 +404,12 @@
     <!-- ABOUT -->
     <section>
 
-      <h2>About</h2>
+      <h2 class="section-title">ABOUT PLAYER</h2>
 
       <p class="about">
         Aetheris. merupakan gaming username yang digunakan oleh
         Indra Setiawan dari Manokwari, Papua Barat.
-        Ia dikenal melalui aktivitas gaming dan media sosial.
+        Profil ini berisi informasi gaming dan media sosial Aetheris.
       </p>
 
     </section>
@@ -320,7 +418,7 @@
     <!-- SOCIAL -->
     <section>
 
-      <h2>Social Media</h2>
+      <h2 class="section-title">SOCIAL LINKS</h2>
 
       <div class="links">
 
@@ -330,7 +428,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Instagram · @ _ndraastwn</span>
+          <span>INSTAGRAM · @_ndraastwn</span>
           <span class="arrow">↗</span>
         </a>
 
@@ -340,7 +438,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>TikTok · @ndraastwnnn</span>
+          <span>TIKTOK · @ndraastwnnn</span>
           <span class="arrow">↗</span>
         </a>
 
@@ -352,27 +450,27 @@
     <!-- GAMING -->
     <section>
 
-      <h2>Gaming</h2>
+      <h2 class="section-title">GAMING DATA</h2>
 
-      <div class="info-grid">
+      <div class="stats">
 
-        <div class="info">
-          <span class="label">Username</span>
+        <div class="stat">
+          <span class="label">GAMING NAME</span>
           <span class="value">Aetheris.</span>
         </div>
 
-        <div class="info">
-          <span class="label">Rank</span>
-          <span class="value">Immortal</span>
+        <div class="stat">
+          <span class="label">CURRENT RANK</span>
+          <span class="value rank">Immortal</span>
         </div>
 
-        <div class="info">
-          <span class="label">Role</span>
+        <div class="stat">
+          <span class="label">PLAY STYLE</span>
           <span class="value">All Role</span>
         </div>
 
-        <div class="info">
-          <span class="label">Region</span>
+        <div class="stat">
+          <span class="label">REGION</span>
           <span class="value">Manokwari</span>
         </div>
 
@@ -382,7 +480,7 @@
 
 
     <footer>
-      © 2026 Aetheris. · Indra Setiawan
+      AETHERIS. © 2026 · INDRA SETIAWAN
     </footer>
 
   </main>
